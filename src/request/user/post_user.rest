@@ -1,0 +1,18 @@
+################################
+POST http://localhost:3001/api/user
+content-type: application/json
+
+ {
+    "user": "Jipson Murillo",
+    "email": "jipsonmurillo@gmail.com",
+    "passwordHash": "Qwerty123."
+  }
+
+################################
+POST http://localhost:3001/api/user/login
+content-type: application/json
+
+ {
+    "email": "jipsonmurillo@gmail.com",
+    "password": "Qwerty123."
+  }
