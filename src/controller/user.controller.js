@@ -26,7 +26,18 @@ const postUser = async (req, res) => {
       passwordHash: newPassword
     })
     const savedUser = await newUser.save()
-    res.json(savedUser)
+
+    const userForToken = {
+      id: savedUser.id,
+      email: savedUser.email
+    }
+
+    const token = getToken(userForToken)
+    res.json({
+      user: savedUser.user,
+      email: savedUser.email,
+      token: token
+    })
   } catch (error) {
     return res.status(400).json({ error: 'HUBO ALGUN ERROR' })
   }
@@ -57,17 +68,20 @@ const loginUser = async (req, res) => {
       email: user.email
     }
 
-    const token = jwt.sign(userForToken, process.env.SECRET_JWT)
+    const token = getToken(userForToken)
 
     res.json({
       user: user.user,
       email: user.email,
-      userId: user.id,
       token: token
     })
   } catch (error) {
     return res.status(400).json({ error: 'HUBO ALGUN ERROR' })
   }
+}
+
+const getToken = (userToken) => {
+  return jwt.sign(userToken, process.env.SECRET_JWT)
 }
 
 module.exports = { postUser, loginUser, getAllUser }

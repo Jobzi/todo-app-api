@@ -4,7 +4,7 @@ content-type: application/json
 
  {
     "user": "Jipson Murillo",
-    "email": "jipsonmurillo@gmail.com",
+    "email": "jipsonmurillo2@gmail.com",
     "passwordHash": "Qwerty123."
   }
 
@@ -13,6 +13,6 @@ POST http://localhost:3001/api/user/login
 content-type: application/json
 
  {
-    "email": "jipsonmurillo@gmail.com",
+    "email": "jipsonmurillo2@gmail.com",
     "password": "Qwerty123."
   }
