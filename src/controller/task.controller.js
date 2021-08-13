@@ -2,14 +2,13 @@ const TaskModel = require('../models/task_model.js')
 const UserModel = require('../models/user_model.js')
 
 const getAllTask = async (req, res) => {
-/* TaskModel.find().sort({ date: 'ascending' }).then(task => {
-    res.json(task)
-  }) */
-  const task = await TaskModel.find().sort({ date: 'ascending' }).populate('user', {
+  const { userId } = req
+  const task = await TaskModel.find({}).sort({ date: 'ascending' }).populate('user', {
     name: 1,
     email: 1
   })
-  res.json(task)
+  const filterTask = task.filter(task => task.user.id === userId)
+  res.json(filterTask)
 }
 
 const postTask = async (req, res) => {

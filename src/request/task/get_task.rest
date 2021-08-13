@@ -1,2 +1,5 @@
 GET http://localhost:3001/api/task
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMGI1NmRjMTczOTM4MjFmMGUzY2RjZiIsImVtYWlsIjoiamlwc29ubXVyaWxsb0BnbWFpbC5jb20iLCJpYXQiOjE2Mjg4NzI0OTN9.HWklbJs7Am0q3m5dJtiHJ2b6sIRBiToAGCmmBFiEEA4
+
 

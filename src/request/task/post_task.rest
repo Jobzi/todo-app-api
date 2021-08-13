@@ -4,6 +4,6 @@ content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMGI1NmRjMTczOTM4MjFmMGUzY2RjZiIsImVtYWlsIjoiamlwc29ubXVyaWxsb0BnbWFpbC5jb20iLCJpYXQiOjE2MjgxMzMwOTh9.pdzXmLnAgqigxfRi8qy0yY5_3Y7bEsunKVwzcjcpUwk
 
 {
-    "content": "Hola soy una nota",
+    "content": "Hola soy segunda nota",
     "important": false
   }

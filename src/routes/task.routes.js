@@ -4,7 +4,7 @@ const { getAllTask, postTask, putTask } = require('../controller/task.controller
 
 const router = express.Router()
 
-router.get('/', getAllTask)
+router.get('/', userExtractor, getAllTask)
 router.post('/', userExtractor, postTask)
 router.put('/', putTask)
 
