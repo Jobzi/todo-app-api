@@ -7,3 +7,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMGI1NmRjM
     "content": "Hola soy segunda nota",
     "important": false
   }
+
+################################
+PUT http://localhost:3001/api/task/610b571317393821f0e3cdd3
+content-type: application/json
+
+{
+    "content": "Hola soy holaa nota2",
+    "important": true
+  }

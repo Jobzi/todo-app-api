@@ -3,10 +3,12 @@ const UserModel = require('../models/user_model.js')
 
 const getAllTask = async (req, res) => {
   const { userId } = req
-  const task = await TaskModel.find({}).sort({ date: 'ascending' }).populate('user', {
-    name: 1,
-    email: 1
-  })
+  const task = await TaskModel.find({ important: false })
+    .sort({ date: 'ascending' })
+    .populate('user', {
+      name: 1,
+      email: 1
+    })
   const filterTask = task.filter(task => task.user.id === userId)
   res.json(filterTask)
 }
@@ -46,6 +48,8 @@ const putTask = async (req, res) => {
   try {
     console.log(id)
     console.log(body)
+    body.important = !body.important
+    body.date = new Date()
     await TaskModel.findByIdAndUpdate(id, body, { new: true }).then(result => {
       res.json(result)
     })

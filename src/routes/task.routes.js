@@ -6,6 +6,6 @@ const router = express.Router()
 
 router.get('/', userExtractor, getAllTask)
 router.post('/', userExtractor, postTask)
-router.put('/', putTask)
+router.put('/:id', putTask)
 
 module.exports = router
